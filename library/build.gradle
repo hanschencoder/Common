@@ -45,6 +45,7 @@ tasks.withType(JavaCompile) {
 
 def siteUrl = 'https://github.com/shensky711/common'
 def gitUrl = 'https://github.com/shensky711/common.git'
+def gitHubRepo = 'shensky711/common'
 def libraryName = 'Common'
 def description = 'A common library for android application'
 group = 'site.hanschen'
@@ -119,7 +120,7 @@ bintray {
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ['Apache-2.0']
-        githubRepo = 'shensky711/common'
+        githubRepo = gitHubRepo
         githubReleaseNotesFile = 'README.md'
     }
 }
