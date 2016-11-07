@@ -43,9 +43,9 @@ tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
 
-def siteUrl = 'https://github.com/shensky711/common'
-def gitUrl = 'https://github.com/shensky711/common.git'
-def gitHubRepo = 'shensky711/common'
+def siteUrl = 'https://github.com/shensky711/Common'
+def gitUrl = 'https://github.com/shensky711/Common.git'
+def gitHubRepo = 'shensky711/Common'
 def libraryName = 'Common'
 def description = 'A common library for android application'
 group = 'site.hanschen'
