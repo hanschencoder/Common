@@ -50,7 +50,7 @@ def gitHubRepo = 'shensky711/Common'
 def libraryName = 'Common'
 def description = 'A common library for android application'
 group = 'site.hanschen'
-version = '1.0.1'
+version = '1.0.2'
 
 install {
     repositories.mavenInstaller {
