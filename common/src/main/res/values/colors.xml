@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Dark icons (#000000), Active:54%/Inactive:38%
+        Light icons (#FFFFFF), Active:100%/Inactive:50%
+    -->
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red">#F44336</color>
+    <color name="pink">#E91E63</color>
+    <color name="purple">#9C27B0</color>
+    <color name="deep_purple">#643AB7</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="blue">#2196F3</color>
+    <color name="light_blue">#03A9F4</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="teal">#009688</color>
+    <color name="green">#4CAF50</color>
+    <color name="light_green">#8BC34A</color>
+    <color name="lime">#CDDC39</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="amber">#FFC107</color>
+    <color name="orange">#FF9800</color>
+    <color name="deep_orange">#FF5722</color>
+    <color name="brown">#795548</color>
+    <color name="grey">#9E9E9E</color>
+    <color name="blue_grey">#607D88</color>
+
+    <!--basic background color-->
+    <color name="light_status_bar_background">#E0E0E0</color>
+    <color name="light_app_bar_background">#F5F5F5</color>
+    <color name="light_content_background">#FAFAFA</color>
+    <color name="light_dialog_background">#FFFFFF</color>
+    <color name="dark_status_bar_background">#000000</color>
+    <color name="dark_app_bar_background">#212121</color>
+    <color name="dark_content_background">#303030</color>
+    <color name="dark_dialog_background">#424242</color>
+
+    <!--text color-->
+    <color name="text_color_black_primary">#DE000000</color><!--87%-->
+    <color name="text_color_black_secondary">#8A000000</color><!--54%-->
+    <color name="text_color_black_disable">#61000000</color><!--38%-->
+    <color name="text_color_black_hint">#61000000</color><!--38%-->
+    <color name="text_color_black_icon">#61000000</color><!--38%-->
+    <color name="text_color_black_divider">#1E000000</color><!--12%-->
+    <color name="text_color_white_primary">#FFFFFFFF</color><!--100%-->
+    <color name="text_color_white_secondary">#B3FFFFFF</color><!--70%-->
+    <color name="text_color_white_disable">#80FFFFFF</color><!--50%-->
+    <color name="text_color_white_hint">#80FFFFFF</color><!--50%-->
+    <color name="text_color_white_icon">#80FFFFFF</color><!--50%-->
+    <color name="text_color_white_divider">#1EFFFFFF</color><!--12%-->
+
+</resources>

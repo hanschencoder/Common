@@ -1,0 +1,48 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--
+        height:
+            Status bar:24dp
+            Toolbar: 56dp
+            Subtitle: 48dp
+        margin:
+            Space between content areas: 8dp
+            Screen edge left and right margins: 16dp
+            Content left margin from screen edge: 72dp
+        touch size: at least 48 x 48 dp
+            Avatar: 40dp, Touch target: 48dp
+            Icon: 24dp, Touch target: 48dp
+    -->
+
+    <dimen name="height_status_bar">24dp</dimen>
+    <dimen name="height_tool_bar">56dp</dimen>
+    <dimen name="height_subtitle">48dp</dimen>
+    <dimen name="content_space">8dp</dimen>
+    <dimen name="screen_edge_margin">16dp</dimen>
+    <dimen name="content_screen_edge_margin">72dp</dimen>
+
+    <dimen name="elevation_dialog">24dp</dimen><!--Dialog-->
+    <dimen name="elevation_picker">24dp</dimen><!--选择器-->
+    <dimen name="elevation_nav_drawer">16dp</dimen><!--抽屉菜单-->
+    <dimen name="elevation_right_drawer">16dp</dimen><!--右侧抽屉菜单-->
+    <dimen name="elevation_modal_bottom_sheet">16dp</dimen><!--底部弹出菜单-->
+    <dimen name="elevation_floating_action_button_pressed">12dp</dimen><!--浮动按钮按下状态-->
+    <dimen name="elevation_sub_menu">9dp</dimen><!-- +1dp for each sub menu -->
+    <dimen name="elevation_bottom_navigation_bar">8dp</dimen><!--BottomBar-->
+    <dimen name="elevation_menu">8dp</dimen><!--ActionBar弹出Menu-->
+    <dimen name="elevation_card_picked_up">8dp</dimen><!--Card选中状态-->
+    <dimen name="elevation_raised_button_pressed">8dp</dimen><!--Button选中状态-->
+    <dimen name="elevation_floating_action_button_resting">6dp</dimen><!--浮动按钮静止状态-->
+    <dimen name="elevation_snack_bar">6dp</dimen><!--SnackBar-->
+    <dimen name="elevation_app_bar">4dp</dimen><!--ActionBar-->
+    <dimen name="elevation_refresh_indicator">3dp</dimen><!--正在刷新图标-->
+    <dimen name="elevation_search_bar_scrolled">3dp</dimen><!--搜索菜单激活状态-->
+    <dimen name="elevation_card_resting">2dp</dimen><!--Card静止状态-->
+    <dimen name="elevation_raised_button_resting">2dp</dimen><!--Button静止状态-->
+    <dimen name="elevation_search_bar_resting">2dp</dimen><!--搜索菜单静止状态-->
+    <dimen name="elevation_switch">1dp</dimen><!--Switch-->
+
+</resources>
