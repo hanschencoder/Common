@@ -15,10 +15,15 @@
  */
 package site.hanschen.common.base.activity;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.AnimatorRes;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -65,5 +70,156 @@ public class BaseActivity extends AppCompatActivity {
             mMainHandler = new Handler(Looper.getMainLooper());
         }
         return mMainHandler;
+    }
+
+    protected void showFragment(@IdRes int containerViewId, Class<? extends Fragment> clz) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        try {
+            Fragment f;
+            if ((f = fm.findFragmentByTag(clz.getName())) == null) {
+                f = clz.newInstance();
+                ft.add(containerViewId, f, clz.getName());
+            }
+            ft.show(f).commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void showFragment(@IdRes int containerViewId,
+                                Class<? extends Fragment> clz,
+                                @AnimatorRes int enterAnim,
+                                @AnimatorRes int exitAnim) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.setCustomAnimations(enterAnim, exitAnim);
+        try {
+            Fragment f;
+            if ((f = fm.findFragmentByTag(clz.getName())) == null) {
+                f = clz.newInstance();
+                ft.add(containerViewId, f, clz.getName());
+            }
+            ft.show(f).commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void addFragment(@IdRes int containerViewId, Class<? extends Fragment> clz) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        try {
+            Fragment f = clz.newInstance();
+            ft.add(containerViewId, f, clz.getName()).show(f).commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void addFragment(@IdRes int containerViewId,
+                               Class<? extends Fragment> clz,
+                               @AnimatorRes int enterAnim,
+                               @AnimatorRes int exitAnim) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.setCustomAnimations(enterAnim, exitAnim);
+        try {
+            Fragment f = clz.newInstance();
+            ft.add(containerViewId, f, clz.getName()).show(f).commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void replaceFragment(@IdRes int containerViewId, Class<? extends Fragment> clz) {
+        replaceFragment(containerViewId, clz, null);
+    }
+
+    protected void replaceFragment(@IdRes int containerViewId, Class<? extends Fragment> clz, Bundle args) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        try {
+            Fragment f;
+            if ((f = fm.findFragmentByTag(clz.getName())) == null) {
+                f = clz.newInstance();
+            }
+            if (args != null) {
+                f.setArguments(args);
+            }
+            ft.replace(containerViewId, f, clz.getName()).show(f).commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void replaceFragment(@IdRes int containerViewId,
+                                   Class<? extends Fragment> clz,
+                                   @AnimatorRes int enterAnim,
+                                   @AnimatorRes int exitAnim) {
+        replaceFragment(containerViewId, clz, null, enterAnim, exitAnim);
+    }
+
+    protected void replaceFragment(@IdRes int containerViewId,
+                                   Class<? extends Fragment> clz,
+                                   Bundle args,
+                                   @AnimatorRes int enterAnim,
+                                   @AnimatorRes int exitAnim) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.setCustomAnimations(enterAnim, exitAnim);
+        try {
+            Fragment f;
+            if ((f = fm.findFragmentByTag(clz.getName())) == null) {
+                f = clz.newInstance();
+            }
+            if (args != null) {
+                f.setArguments(args);
+            }
+            ft.replace(containerViewId, f, clz.getName()).show(f).commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void removeFragment(@IdRes int containerViewId) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        Fragment f = fm.findFragmentById(containerViewId);
+        if (f != null) {
+            ft.remove(f).commit();
+        }
+    }
+
+    protected void removeFragment(Class<? extends Fragment> clz) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        Fragment f = fm.findFragmentByTag(clz.getName());
+        if (f != null) {
+            ft.remove(f).commit();
+        }
+    }
+
+    protected void hideFragment(@IdRes int containerViewId) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        Fragment f = fm.findFragmentById(containerViewId);
+        if (f != null) {
+            ft.hide(f).commit();
+        }
+    }
+
+    protected void hideFragment(Class<? extends Fragment> clz) {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        Fragment f = fm.findFragmentByTag(clz.getName());
+        if (f != null) {
+            ft.hide(f).commit();
+        }
+    }
+
+    protected Fragment getFragmentById(int containerViewId) {
+        FragmentManager fm = getFragmentManager();
+        return fm.findFragmentById(containerViewId);
     }
 }
