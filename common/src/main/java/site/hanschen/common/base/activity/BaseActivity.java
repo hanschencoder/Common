@@ -76,6 +76,10 @@ public class BaseActivity extends AppCompatActivity {
         showFragment(containerViewId, clz, 0, 0, null);
     }
 
+    /**
+     * 这里需要注意一个问题，添加了出场动画的话，Fragment会在动画结束之后才移除，
+     * 在移除之前，通过findFragmentById或者findFragmentByTag还是可以找到这个Fragment的
+     */
     protected void showFragment(@IdRes int containerViewId,
                                 Class<? extends Fragment> clz,
                                 @AnimatorRes int enterAnim,
@@ -84,7 +88,8 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 显示Fragment，如果Fragment已存在，则直接show，否则实例化Fragment并显示
+     * 显示Fragment，如果Fragment已存在，则直接show，否则实例化Fragment并显示。这里需要注意一个问题，添加了出场动画的话，
+     * Fragment会在动画结束之后才移除，在移除之前，通过findFragmentById或者findFragmentByTag还是可以找到这个Fragment的
      *
      * @param containerViewId 容器ID
      * @param clz             Fragment类
@@ -124,6 +129,10 @@ public class BaseActivity extends AppCompatActivity {
         replaceFragment(containerViewId, clz, args, 0, 0);
     }
 
+    /**
+     * 这里需要注意一个问题，添加了出场动画的话，Fragment会在动画结束之后才移除，
+     * 在移除之前，通过findFragmentById或者findFragmentByTag还是可以找到这个Fragment的
+     */
     protected void replaceFragment(@IdRes int containerViewId,
                                    Class<? extends Fragment> clz,
                                    @AnimatorRes int enterAnim,
@@ -131,6 +140,10 @@ public class BaseActivity extends AppCompatActivity {
         replaceFragment(containerViewId, clz, null, enterAnim, exitAnim);
     }
 
+    /**
+     * 这里需要注意一个问题，添加了出场动画的话，Fragment会在动画结束之后才移除，
+     * 在移除之前，通过findFragmentById或者findFragmentByTag还是可以找到这个Fragment的
+     */
     protected void replaceFragment(@IdRes int containerViewId,
                                    Class<? extends Fragment> clz,
                                    Bundle args,
