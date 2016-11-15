@@ -19,9 +19,6 @@ import android.content.Context;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-/**
- * 打开或关闭软键盘
- */
 public class KeyBoardUtils {
 
     /**

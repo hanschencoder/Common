@@ -18,14 +18,7 @@ package site.hanschen.common.utils;
 import android.content.Context;
 import android.util.TypedValue;
 
-/**
- * 常用单位转换的辅助类
- */
 public class DensityUtils {
-
-	private DensityUtils() {
-		throw new UnsupportedOperationException("cannot be instantiated");
-	}
 
 	/**
 	 * dp转px

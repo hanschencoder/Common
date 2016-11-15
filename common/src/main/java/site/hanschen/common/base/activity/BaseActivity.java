@@ -73,24 +73,30 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     protected void showFragment(@IdRes int containerViewId, Class<? extends Fragment> clz) {
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        try {
-            Fragment f;
-            if ((f = fm.findFragmentByTag(clz.getName())) == null) {
-                f = clz.newInstance();
-                ft.add(containerViewId, f, clz.getName());
-            }
-            ft.show(f).commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        showFragment(containerViewId, clz, 0, 0, null);
     }
 
     protected void showFragment(@IdRes int containerViewId,
                                 Class<? extends Fragment> clz,
                                 @AnimatorRes int enterAnim,
                                 @AnimatorRes int exitAnim) {
+        showFragment(containerViewId, clz, enterAnim, exitAnim, null);
+    }
+
+    /**
+     * 显示Fragment，如果Fragment已存在，则直接show，否则实例化Fragment并显示
+     *
+     * @param containerViewId 容器ID
+     * @param clz             Fragment类
+     * @param enterAnim       入场动画
+     * @param exitAnim        出场动画
+     * @param args            传递参数
+     */
+    protected void showFragment(@IdRes int containerViewId,
+                                Class<? extends Fragment> clz,
+                                @AnimatorRes int enterAnim,
+                                @AnimatorRes int exitAnim,
+                                Bundle args) {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.setCustomAnimations(enterAnim, exitAnim);
@@ -98,35 +104,13 @@ public class BaseActivity extends AppCompatActivity {
             Fragment f;
             if ((f = fm.findFragmentByTag(clz.getName())) == null) {
                 f = clz.newInstance();
-                ft.add(containerViewId, f, clz.getName());
+                if (args != null) {
+                    f.setArguments(args);
+                }
+                ft.add(containerViewId, f, clz.getName()).commit();
+            } else {
+                ft.show(f).commit();
             }
-            ft.show(f).commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    protected void addFragment(@IdRes int containerViewId, Class<? extends Fragment> clz) {
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        try {
-            Fragment f = clz.newInstance();
-            ft.add(containerViewId, f, clz.getName()).show(f).commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    protected void addFragment(@IdRes int containerViewId,
-                               Class<? extends Fragment> clz,
-                               @AnimatorRes int enterAnim,
-                               @AnimatorRes int exitAnim) {
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.setCustomAnimations(enterAnim, exitAnim);
-        try {
-            Fragment f = clz.newInstance();
-            ft.add(containerViewId, f, clz.getName()).show(f).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -137,20 +121,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     protected void replaceFragment(@IdRes int containerViewId, Class<? extends Fragment> clz, Bundle args) {
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        try {
-            Fragment f;
-            if ((f = fm.findFragmentByTag(clz.getName())) == null) {
-                f = clz.newInstance();
-            }
-            if (args != null) {
-                f.setArguments(args);
-            }
-            ft.replace(containerViewId, f, clz.getName()).show(f).commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        replaceFragment(containerViewId, clz, args, 0, 0);
     }
 
     protected void replaceFragment(@IdRes int containerViewId,
@@ -172,11 +143,11 @@ public class BaseActivity extends AppCompatActivity {
             Fragment f;
             if ((f = fm.findFragmentByTag(clz.getName())) == null) {
                 f = clz.newInstance();
+                if (args != null) {
+                    f.setArguments(args);
+                }
             }
-            if (args != null) {
-                f.setArguments(args);
-            }
-            ft.replace(containerViewId, f, clz.getName()).show(f).commit();
+            ft.replace(containerViewId, f, clz.getName()).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
