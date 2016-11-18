@@ -25,6 +25,9 @@ import android.view.WindowManager;
 
 public class ScreenUtils {
 
+    private ScreenUtils() {
+    }
+
     /**
      * 获得屏幕高度
      */

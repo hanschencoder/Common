@@ -20,6 +20,9 @@ import android.util.TypedValue;
 
 public class DensityUtils {
 
+	private DensityUtils() {
+	}
+
 	/**
 	 * dp转px
 	 */

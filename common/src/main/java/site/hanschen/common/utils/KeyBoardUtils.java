@@ -21,6 +21,9 @@ import android.widget.EditText;
 
 public class KeyBoardUtils {
 
+    private KeyBoardUtils() {
+    }
+
     /**
      * 打卡软键盘
      *

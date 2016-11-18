@@ -34,6 +34,9 @@ import java.util.List;
 
 public class PackageUtils {
 
+    private PackageUtils() {
+    }
+
     public static final String TAG                  = "PackageUtils";
     public static final int    APP_INSTALL_AUTO     = 0;
     public static final int    APP_INSTALL_INTERNAL = 1;

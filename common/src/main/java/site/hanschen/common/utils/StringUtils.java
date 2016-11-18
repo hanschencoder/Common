@@ -22,6 +22,9 @@ import java.util.regex.Pattern;
 
 public class StringUtils {
 
+    private StringUtils() {
+    }
+
     public static String replaceBlank(String str) {
         String dest = "";
         if (str != null) {

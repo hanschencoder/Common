@@ -33,6 +33,9 @@ import android.text.style.UnderlineSpan;
 
 public class TextViewUtil {
 
+    private TextViewUtil() {
+    }
+
     /**
      * 设置字体大小，用px
      *

@@ -27,6 +27,9 @@ import java.util.List;
 
 public class ShareUtils {
 
+	private ShareUtils() {
+	}
+
 	public static void shareSingleFile(@NonNull Context context, @NonNull File file, String title) {
 
 		Intent shareIntent = new Intent();

@@ -21,6 +21,9 @@ import java.util.Locale;
 
 public class TimeUtils {
 
+    private TimeUtils() {
+    }
+
     public static final SimpleDateFormat DEFAULT_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     public static final SimpleDateFormat DATE_FORMAT_DATE    = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 

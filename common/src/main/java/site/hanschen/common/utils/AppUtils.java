@@ -22,6 +22,9 @@ import android.content.pm.PackageManager.NameNotFoundException;
 
 public class AppUtils {
 
+    private AppUtils() {
+    }
+
     /**
      * 获取应用程序名称
      */

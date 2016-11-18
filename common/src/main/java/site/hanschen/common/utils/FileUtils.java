@@ -32,6 +32,9 @@ import java.util.List;
 
 public class FileUtils {
 
+    private FileUtils() {
+    }
+
     public final static String FILE_EXTENSION_SEPARATOR = ".";
     public final static String JPG_SUFFIX               = ".jpg";
 

@@ -20,6 +20,9 @@ import java.io.IOException;
 
 public class CloseUtils {
 
+    private CloseUtils() {
+    }
+
     public static void close(Closeable closeable) {
         if (closeable != null) {
             try {

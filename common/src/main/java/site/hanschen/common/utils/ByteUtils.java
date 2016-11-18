@@ -17,6 +17,9 @@ package site.hanschen.common.utils;
 
 public class ByteUtils {
 
+	private ByteUtils() {
+	}
+
 	/**
 	 * 把short转化为byte数组，byte[0]是高位
 	 *

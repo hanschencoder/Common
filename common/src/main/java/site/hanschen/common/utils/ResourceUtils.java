@@ -10,6 +10,9 @@ import android.support.annotation.ColorRes;
  */
 public class ResourceUtils {
 
+    private ResourceUtils() {
+    }
+
     @ColorInt
     public static int getColor(Context context, @ColorRes int colorId) {
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {

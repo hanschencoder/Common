@@ -21,6 +21,9 @@ import android.widget.ImageView;
 
 public class ImageUtils {
 
+    private ImageUtils() {
+    }
+
     public static final int BRIGHTNESS_NORMAL  = 0;
     public static final int BRIGHTNESS_PRESSED = -50;
 
